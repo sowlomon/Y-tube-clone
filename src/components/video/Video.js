@@ -9,16 +9,7 @@ import numeral from "numeral"
 
 const Video = ({ video }) => {
 
-  const {
-    id,
-    snippet:{
-      channelId,
-      channelTitle,
-      title,
-      publishedAt,
-      thumbnails: { medium },
-    }
-  } = video;
+  const {id , snippet:{channelId,channelTitle,title,publishedAt,thumbnails: { medium },}} = video;
 
   const [views, setViews] = useState(null)
   const [duration, setDuration] = useState(null)
@@ -32,7 +23,7 @@ const Video = ({ video }) => {
 
     const get_video_details = async () => {
 
-      const {data:{items},} = await request('/videos',{
+      const {data:{items},} = await request("/videos",{
 
         params:{
           part:"contentDetails,statistics",
