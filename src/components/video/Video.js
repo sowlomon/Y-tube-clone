@@ -33,10 +33,12 @@ const Video = ({ video }) => {
       })
       setDuration(items[0].contentDetails.duration)
       setViews(items[0].statistics.viewCount)
+
+      console.log(items)
     }
 
     get_video_details()
-
+    
   }, [id])
 
 

@@ -19,9 +19,9 @@ const HomeScreen = () => {
       <CategoriesBar/>
       <Row>
 
-        {videos.map((video)=>(
+        {videos?.map((video)=>(
           <Col lg={3} md={4}> 
-            <Video video={videos}/>
+            <Video video={video}/>
             <Col key={video.id}/>
           </Col>
         ))}
