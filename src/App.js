@@ -8,6 +8,8 @@ import "./_app.scss"
 import { Redirect, Route, Switch, useHistory} from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useEffect } from "react"
+import WatchScreen from "./screens/watchScreen/WatchScreen"
+
 
 
 const Layout = ({children}) => {
@@ -51,26 +53,33 @@ const App = () => {
 
   return ( 
     
-      <Switch>
-        <Route path="/" exact>
-          <Layout>
-            <HomeScreen/>
-          </Layout>
-        </Route>
-        <Route path="/login">
-          <LoginScreen/>
-        </Route>
+    <Switch>
+      <Route path="/" exact>
+        <Layout>
+          <HomeScreen/>
+        </Layout>
+      </Route>
+      <Route path="/login">
+        <LoginScreen/>
+      </Route>
 
-        <Route path="/search">
-          <Layout>
-            <h1>Search me</h1>
-          </Layout>
-        </Route>
+      <Route path="/search">
+        <Layout>
+          <h1>Search me</h1>
+        </Layout>
+      </Route>
 
-        <Route>
-          <Redirect to="/"/>
-        </Route>
-      </Switch>
+      <Route path="/watch/ : id">
+        <Layout>
+          <WatchScreen />
+        </Layout>
+
+      </Route>
+
+      <Route>
+        <Redirect to="/"/>
+      </Route>
+    </Switch>
 
   
   
