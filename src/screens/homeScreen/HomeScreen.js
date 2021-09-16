@@ -43,7 +43,7 @@ const HomeScreen = () => {
         }
         className="row">
       
-        { !loading ? videos?.map((video)=>(
+        { !loading ? videos.map((video)=>(
           <Col lg={3} md={4}> 
 
             <Video video={video} key ={video.id}/>

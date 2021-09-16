@@ -8,7 +8,8 @@ import "./_app.scss"
 import { Redirect, Route, Switch, useHistory} from "react-router-dom"
 import { useSelector } from "react-redux"
 import { useEffect } from "react"
-import WatchScreen from "./screens/watchScreen/WatchScreen"
+import WatchScreen from "../src/screens/watchScreen/WatchScreen"
+
 
 
 
@@ -69,15 +70,14 @@ const App = () => {
         </Layout>
       </Route>
 
-      <Route path="/watch/ : id">
+      <Route path="/watch/:id">
         <Layout>
-          <WatchScreen />
+          <WatchScreen/>
         </Layout>
-
       </Route>
 
       <Route>
-        <Redirect to="/"/>
+        <Redirect to="/" />
       </Route>
     </Switch>
 

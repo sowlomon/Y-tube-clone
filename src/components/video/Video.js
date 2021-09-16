@@ -10,7 +10,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Video = ({ video }) => {
 
-  const {id , snippet:{channelId,channelTitle,title,publishedAt,thumbnails: { medium },}} = video;
+  const {id , snippet:{channelId,channelTitle,title,publishedAt,thumbnails: { medium },},} = video;
 
   const [views, setViews] = useState(null)
   const [duration, setDuration] = useState(null)
@@ -37,7 +37,7 @@ const Video = ({ video }) => {
       setDuration(items[0].contentDetails.duration)
       setViews(items[0].statistics.viewCount)
 
-      console.log(items)
+    
     }
 
     get_video_details()
